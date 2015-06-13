@@ -1,0 +1,6 @@
+*.log
+*.pyc
+
+tmp
+flask
+db_repository
