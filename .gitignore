@@ -1,7 +1,6 @@
 *.log
 *.pyc
 *.db
-*.gitignore
 
 tmp
 flask
