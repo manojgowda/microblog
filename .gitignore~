@@ -1,6 +1,5 @@
 *.log
 *.pyc
-*.db
 
 tmp
 flask
