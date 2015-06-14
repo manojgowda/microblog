@@ -1,7 +1,0 @@
-*.log
-*.pyc
-*.db
-
-tmp
-flask
-db_repository
