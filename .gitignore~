@@ -1,8 +1,0 @@
-*.log
-*.pyc
-*.db
-*.gitignore
-
-tmp
-flask
-db_repository
