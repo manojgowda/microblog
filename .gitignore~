@@ -1,0 +1,11 @@
+*.log
+*.pyc
+*.db
+*.py~
+*.html~
+.gitignore
+.gitignore~
+
+tmp
+flask
+db_repository

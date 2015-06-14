@@ -1,0 +1,9 @@
+*.log
+*.pyc
+*.db
+*.py~
+*.html~
+
+tmp
+flask
+db_repository
