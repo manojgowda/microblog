@@ -1,6 +1,5 @@
 from flask import render_template, flash, redirect, session, url_for, request, g
-from flask.ext.login import login_user, logout_user, current_user, \
-    login_required
+from flask.ext.login import login_user, logout_user, current_user, login_required
 from datetime import datetime
 from app import app, db, lm, oid
 from .forms import LoginForm, EditForm, PostForm, SearchForm
@@ -83,7 +82,6 @@ def after_login(resp):
         user = User(nickname=nickname, email=resp.email)
         db.session.add(user)
         db.session.commit()
-        # make the user follow him/herself
         db.session.add(user.follow(user))
         db.session.commit()
     remember_me = False

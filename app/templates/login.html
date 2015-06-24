@@ -15,20 +15,26 @@
         form.elements['openid'].value = openid;
     }
     </script>
-    <h1>Sign In</h1>
+    <div class="container-fluid jumbotron">
+    <h1 class="text-primary">Sign In</h1><br>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
         <p>
-            Please enter your OpenID, or select one of the providers below:<br>
-            {{ form.openid(size=80) }}
+            <h6 class="text-info" style ="font-size:18px" >Please enter your OpenID, or select from the list:</h6>
+            {{ form.openid(size=30) }}
+            <button type="button" class="btn btn-primary">Select ID</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+            {% for pr in providers %}
+                <li><a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a></li>
+            {% endfor %}
+            </ul>
+            </button>
             {% for error in form.openid.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}<br>
-            |{% for pr in providers %}
-                <a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
+                <span class="text-warning">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>{{ form.remember_me }} Remember Me</p>
-        <p><input type="submit" value="Sign In"></p>
+        <p><button type="submit" class="btn btn-primary btn-lg">Sign In</button></p>
     </form>
 {% endblock %}
