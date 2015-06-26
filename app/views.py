@@ -169,6 +169,7 @@ def unfollow(nickname):
     flash('You have stopped following ' + nickname + '.')
     return redirect(url_for('user', nickname=nickname))
 
+    
 
 @app.route('/search', methods=['POST'])
 @login_required

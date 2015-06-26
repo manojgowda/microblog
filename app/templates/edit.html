@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Edit your INFO<h1>
+<div class="well">
+<h3>Edit your INFO<h3>
 <form name='edit' action="" method='post'>
 	{{form.hidden_tag()}}
       <table>
@@ -12,17 +13,17 @@
             <br><span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </td>
-
           </tr>
+		<tr></tr>
           <tr>
               <td>About yourself:</td>
               <td>{{ form.about_me(cols=32, rows=4) }}</td>
           </tr>
           <tr>
               <td></td>
-              <td><input type="submit" value="Save Changes"></td>
+              <td><input class="btn btn-info" type="submit" value="Save Changes"></td>
           </tr>
       </table>
   </form>
+</div>
 {% endblock %}
-

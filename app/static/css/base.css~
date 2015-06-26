@@ -1,0 +1,10 @@
+html { background-color: #333300; }
+body { background-color: #333300; }
+.topnav {
+	position:absolute;
+	width:100%;
+	z-index:999;
+	background-color:#5f5f5f;
+	opacity:0.98;
+	height:40px;
+}

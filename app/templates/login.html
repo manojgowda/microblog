@@ -15,11 +15,10 @@
         form.elements['openid'].value = openid;
     }
     </script>
-    <div class="container-fluid jumbotron">
+	<div class="container well">
     <h1 class="text-primary">Sign In</h1><br>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
-        <p>
             <h6 class="text-info" style ="font-size:18px" >Please enter your OpenID, or select from the list:</h6>
             {{ form.openid(size=30) }}
             <button type="button" class="btn btn-primary">Select ID</button>
@@ -36,5 +35,5 @@
         </p>
         <p>{{ form.remember_me }} Remember Me</p>
         <p><button type="submit" class="btn btn-primary btn-lg">Sign In</button></p>
-    </form>
+    </form></div>
 {% endblock %}

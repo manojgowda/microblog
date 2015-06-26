@@ -2,23 +2,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ g.user.nickname }}!</h1>
+    <h1>Hi, {{ g.user.nickname }}!</h1><br>
 	<form action="" method="post" name="post">
       {{ form.hidden_tag() }}
       <table>
           <tr>
               <td>Say something:</td>
-              <td>{{ form.post(size=30, maxlength=140) }}</td>
+              <td>{{ form.post(size=30, maxlength=140) }} <button  class="btn btn-info" type="submit"> Post</button></td>
               <td>
               {% for error in form.post.errors %}
-              <span style="color: red;">[{{ error }}]</span><br>
+              <span style="color: red;" class="text-danger"">[{{ error }}]</span><hr>
               {% endfor %}
               </td>
-          </tr>
-          <tr>
-              <td></td>
-              <td><input type="submit" value="Post!"></td>
-              <td></td>
           </tr>
       </table>
   </form>
@@ -27,6 +22,7 @@
   {% include 'post.html' %}
 </p>
 {% endfor %}
-{% if posts.has_prev %}<a href="{{ url_for('index', page=posts.prev_num) }}">&lt;&lt; Newer posts</a>{% else %}&lt;&lt; Newer posts{% endif %} | 
-{% if posts.has_next %}<a href="{{ url_for('index', page=posts.next_num) }}">Older posts &gt;&gt;</a>{% else %}Older posts &gt;&gt;{% endif %}
+<ul class="pager">
+{% if posts.has_prev %}<li class="previous"><a href="{{ url_for('index', page=posts.prev_num) }}">Previous</a></li>{% else %}<li class="previous disabled"><a href="#">Previous</a></li>{% endif %}
+{% if posts.has_next %}<li class="next"><a href="{{ url_for('index', page=posts.next_num) }}">Next</a></li>{% else %}<li class="next disabled"><a href="#">Next</a></li>{% endif %} </ul>
 {% endblock %}
