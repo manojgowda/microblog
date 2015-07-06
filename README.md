@@ -27,4 +27,14 @@ Very first step:
         text found in the posts
       * user.html : used for profile page display
 ---> config.py : where used to store global variables
----> forms.py : 
+---> forms.py : where web forms are created
+---> models.py : where databases of classes arecreated.
+---> views.py : where openid and logins are managed.
+---> decorators.py : where multithread is handled.
+The above files are stored within app folder
+
+---> db_create.py : where database is created and it's name is app.db
+---> db_downgrade.py : scripts helps in the downgrade of database whenever required.
+---> db_upgrade.py : this scripts helps in the upgradation of database.
+---> db_migrate.py : this scripts helps in the migration of database.
+The above files are stored within microblog folder.
